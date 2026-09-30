@@ -79,7 +79,7 @@ function Dashboard() {
           <div className="label-mono">Exams · 30 days</div>
           <div className="mt-2 text-3xl font-semibold tracking-tight">{EXAMS.length}</div>
           <div className="mt-3 font-mono text-[11px] text-muted-foreground">
-            next in {EXAMS[0].days} days
+            next in {EXAMS[0]?.days ?? 0} days
           </div>
         </Card>
       </section>
