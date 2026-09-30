@@ -11,6 +11,8 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { PlannerProvider } from "@/lib/planner-store";
+import { AppSidebar, MobileNav } from "@/components/AppSidebar";
 
 function NotFoundComponent() {
   return (
@@ -119,8 +121,18 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <PlannerProvider>
+        <div className="paperground flex min-h-screen text-ink">
+          <AppSidebar />
+          <div className="flex min-w-0 flex-1 flex-col">
+            <MobileNav />
+            <main className="min-w-0 flex-1 p-6 lg:p-8">
+              {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+              <Outlet />
+            </main>
+          </div>
+        </div>
+      </PlannerProvider>
     </QueryClientProvider>
   );
 }
