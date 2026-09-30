@@ -20,7 +20,7 @@ export const Route = createFileRoute("/plan")({
       },
     ],
   }),
-  component: WeeklyPlan;
+  component: WeeklyPlan,
 });
 
 function WeeklyPlan() {
