@@ -89,11 +89,11 @@ function Progress() {
               <div key={d.day} className="flex flex-1 flex-col items-center gap-2">
                 <div className="flex h-36 w-full items-end rounded-lg bg-ink/5">
                   <div
-                    className="w-full rounded-lg bg-accent/25"
+                    className="flex w-full items-end rounded-lg bg-accent/25"
                     style={{ height: `${(d.total / peak) * 100}%` }}
                   >
                     <div
-                      className="h-full w-full rounded-lg bg-accent"
+                      className="w-full rounded-lg bg-accent"
                       style={{ height: d.total ? `${(d.done / d.total) * 100}%` : "0%" }}
                     />
                   </div>
